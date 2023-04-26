@@ -8,24 +8,160 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    .social p{
+        border: 1px black solid;
+    }
+</style>
+<title>Hotel</title>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="login">
-            <form action="#" method="post">
-                <label for="username"><i class="fa fa-user" aria-hidden="true"></i> username</label>
-                <input type="text" name="username" id="username" class="form-control">
-                <label for="password"><i class="fa fa-lock" aria-hidden="true"></i> password</label>
-                <input type="password" name="password" id="password" class="form-control">
-                <br>
-                <input type="submit" value="login" class="form-control btn btn-primary">
-            </form>
+        <div class="row">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="width: 100%;">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="#">Action 1</a>
+                                <a class="dropdown-item" href="#">Action 2</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="row" style="margin-top: 70px;">
+            <div class="col-sm-2 ">
+                <div class="side_nav ">
+                    <h3>Services</h3>
+                    <ul class="navbar-nav">
+                        <li class="nav-link"><a href="#reserve"><i class="fa fa-phone" aria-hidden="true"></i> reservations</a></li>
+                        <li class="nav-link"><a href="#food"><i class="fas fa-utensil-spoon    "></i> food</a></li>
+                        <li class="nav-link"><a href="#drinks"><i class="fas fa-wine-glass    "></i> drinks</a></li>
+                        <li class="nav-link"><a href="#rooms"><i class="fa fa-home" aria-hidden="true"></i> rooms</a></li>
+                    </ul>
+                </div>
+            </div><!--end first two columns-->
+            <div class="col-sm-8 ">
+                <h3><i class="fas fa-hotel    "></i>hotel</h3>
+                <div class="reservation" id="reserve">
+                <h4  ><i class="fa fa-phone-square" aria-hidden="true"></i>RESERVATIONS <button data-target="#reservation" data-toggle="collapse"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></h4>
+                <div class="reserve collapse show" id="reservation">
+                    <hr>
+                    <p><q style="color: grey;"> Book us Now to reserve your sit. Don't miss a Sit</q></p>
+                    <h5>table</h5>
+                    <form action="#" method="post">
+                        <label for="table">table for:</label>
+                        <input type="number" name="numberofpeople" id="table" class="form-control" max="6" placeholder="number of people">
+                        <label for="date">date</label>
+                        <input type="date" name="date" id="date" class="form-control">
+                        <label for="time">time</label>
+                        <input type="time" name="time" id="time" class="form-control">
+                        <label for="tablenumber">tables available</label>
+                        <select name="tablenumber" id="tablenumber" class="form-control">
+                            <option value="1">table 1</option>
+                            <option value="2">table 2</option>
+                        </select>
+                        <br>
+                        <input type="submit" value="book table" name="tablebooking" class="btn btn-warning btn-block">
+                    </form>
+                    <h5><i class="fas fa-hotel    "></i> Rooms</h5>
+                    <form action="#" method="post">
+                        <label for="numberofpeople">number of people</label>
+                        <select name="numberofpeople" id="numberofpeople" class="form-control">
+                            <option value="1">only me</option>
+                            <option value="2">me and my wife</option>
+                            <option value="5">about 5</option>
+                        </select>
+                        <label for="duration-from">duration of stay from</label>
+                        <input type="datetime-local" name="duration-from" id="duration-from" class="form-control">
+                        <label for="duration-end">last day of checkout</label>
+                        <input type="datetime-local" name="duration-end" id="duration-end" class="form-control">
+                    </form>
+                </div><!--end of reserve-->
+
+                </div>
+                <div class="food" id="food">
+                <h4 id="food"><i class="fas fa-utensil-spoon    "></i>food <button data-target="#food-collapse" data-toggle="collapse"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></h4>
+                <hr>
+                <div class="food-collapse collapse show" id="food-collapse">
+                    <div class="food1 owl-carousel">
+                        <div class="item"><!--item 1 in owl carousel-->
+                            <div class="jumbotron jumbotron-fluid">
+                                <div class="container">
+                                    <h1 class="display-3">Fluid jumbo heading</h1>
+                                    <p class="lead">Jumbo helper text</p>
+                                    <hr class="my-2">
+                                    <p>More info</p>
+                                    <p class="lead">
+                                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item"><!--item 2 in owl carousel-->
+                            <div class="jumbotron jumbotron-fluid">
+                                <div class="container">
+                                    <h1 class="display-3">Fluid jumbo heading</h1>
+                                    <p class="lead">Jumbo helper text</p>
+                                    <hr class="my-2">
+                                    <p>More info</p>
+                                    <p class="lead">
+                                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+                <div class="drinks">
+                <h4 id="drinks"><i class="fas fa-wine-glass-alt    "></i>DRINKS</h4>
+                <hr>
+                </div>
+                <div class="rooms" id="rooms">
+                <h4 id="rooms"><i class="fas fa-hotel    "></i>ROOMS</h4>
+                <hr>
+                
+                </div>
+            </div><!--end of center section 10 columns-->
+            <div class="col-sm-2">
+                <h3><i class="fa fa-book" aria-hidden="true"></i>contact us</h3>
+                <p>you can reach us from :</p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i>phone <span>+2547123456789</span></p>
+                <div class="social">
+                    <p><a href="#"><img src="./assets/icons/whatsapp.svg" alt="" width="30%"> whatsapp</a></p>
+                    <p><a href="#"><img src="./assets/icons/facebook.svg" alt="" width="30%"> facebook</a></p>
+                    <p><a href="#"><img src="./assets/icons/telegram.svg" alt="" width="30%"> telegram</a></p>
+                </div>
+            </div><!--end of last two columns-->
+
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/js/carousel.js"></script>
 </body>
 </html>
